@@ -49,7 +49,6 @@ public class EmployeDAO {
                 e.setNom(rs.getString("nom"));
                 e.setSalaireMensuel(rs.getDouble("salaireMensuel"));
 
-                // Pour l'employeur, on crée un objet avec juste l'ID pour le moment
                 Employeur boss = new Employeur();
                 boss.setId(rs.getInt("employeur_id"));
                 e.setEmployeur(boss);
