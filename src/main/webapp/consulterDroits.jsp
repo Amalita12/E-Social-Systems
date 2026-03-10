@@ -1,35 +1,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Droits de l'Assuré</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Dossier Assuré</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+
+        .cadre-info {
+            border: 1px solid black;
+            padding: 15px;
+            width: 250px;
+            margin-top: 10px;
+        }
+
+        .lien-retour { margin-top: 20px; display: block; }
+    </style>
 </head>
-<body class="container mt-5">
-<div class="card shadow">
-    <div class="card-header bg-primary text-white">
-        <h3>Dossier Social : ${assure.nom}</h3>
-    </div>
-    <div class="card-body">
-        <p><strong>Salaire Mensuel :</strong> ${assure.salaireMensuel} €</p>
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="alert alert-info">
-                    <h5>Mois validés</h5>
-                    <h2>${assure.nbMoisDeclares}</h2>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="alert alert-success">
-                    <h5>Total des Cotisations</h5>
-                    <h2>${assure.totalCotisations} €</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="employeur?action=list" class="btn btn-secondary">Retour aux entreprises</a>
-    </div>
+<body>
+
+<h2>Dossier Social : ${assure.nom}</h2>
+
+<p>Salaire Mensuel : <strong>${assure.salaireMensuel} MAD</strong></p>
+
+<div class="cadre-info">
+    <p>Mois validés : <strong>${assure.nbMoisDeclares}</strong></p>
+    <p>Total Cotisations : <strong>${assure.totalCotisations} MAD</strong></p>
 </div>
+
+<a href="employeur?action=list" class="lien-retour">Retour à la liste</a>
+
 </body>
 </html>

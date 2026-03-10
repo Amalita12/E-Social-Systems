@@ -3,13 +3,21 @@
 <html>
 <head>
     <title>Liste des Employeurs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: sans-serif; margin: 30px; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .actions { display: flex; gap: 10px; }
+        a { color: #333; text-decoration: underline; }
+    </style>
 </head>
-<body class="container mt-5">
-<h2 class="mb-4">Liste des Entreprises</h2>
+<body>
 
-<table class="table table-bordered table-hover">
-    <thead class="table-primary">
+<h2>Liste des Entreprises</h2>
+
+<table>
+    <thead>
     <tr>
         <th>ID</th>
         <th>Raison Sociale</th>
@@ -23,19 +31,19 @@
             <td>${emp.id}</td>
             <td>${emp.raisonSociale}</td>
             <td>${emp.secteurActivite}</td>
-            <td>
-                <a href="employeur?action=details&id=${emp.id}" class="btn btn-sm btn-info">Voir détails</a>
-                <a href="formEmploye.jsp" class="btn btn-sm btn-info">Voir détails</a>
-
+            <td class="actions">
+                <a href="employeur?action=details&id=${emp.id}">Détails</a>
+                <a href="formEmploye.jsp">Ajouter Employé</a>
             </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 
-<div class="mt-3">
-    <a href="ajouterEmployeur.jsp" class="btn btn-sm btn-info">ajouter Emloyeurs</a>
-    <a href="index.jsp" class="btn btn-secondary">Retour à l'accueil</a>
+<div style="margin-top: 20px;">
+    <a href="ajouterEmployeur.jsp">Ajouter un employeur</a> |
+    <a href="index.jsp">Retour à l'accueil</a>
 </div>
+
 </body>
 </html>
