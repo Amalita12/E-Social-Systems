@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/employe") // C'est l'URL pour accéder à cette servlet
+@WebServlet("/employe")
 public class EmployeServlet extends HttpServlet {
 
     private EmployeDAO employeDAO;

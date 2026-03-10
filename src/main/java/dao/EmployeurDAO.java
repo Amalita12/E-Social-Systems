@@ -9,7 +9,6 @@ import java.util.List;
 public class EmployeurDAO {
 
     public void ajouterEmployeur(Employeur e) {
-        // SQL correspond à tes colonnes : raisonSociale, secteurActivite
         String sql = "INSERT INTO employeurs (raisonSociale, secteurActivite) VALUES (?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

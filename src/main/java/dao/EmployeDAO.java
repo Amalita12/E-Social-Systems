@@ -89,13 +89,12 @@ public class EmployeDAO {
     public Employe consulterDroit(int idAssure) {
         Employe emp = null;
         String sql = "SELECT e.nom, e.salaireMensuel, " +
-                "COUNT(DISTINCT d.id) as nbMois, " +
+                "COUNT(c.id) as nbCotisations, " +
                 "SUM(c.montantSalarial + c.montantPatronal) as totalCotis " +
                 "FROM employes e " +
                 "LEFT JOIN cotisations c ON e.id = c.employe_id " +
-                "LEFT JOIN declarations d ON c.declaration_id = d.id " +
                 "WHERE e.id = ? " +
-                "GROUP BY e.id";
+                "GROUP BY e.id, e.nom, e.salaireMensuel";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

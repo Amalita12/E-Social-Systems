@@ -50,7 +50,7 @@ public class DeclarationServlet extends HttpServlet {
             Declaration dec = new Declaration();
             dec.setMois(mois);
             dec.setAnnee(annee);
-            dec.setDateDeclaration(LocalDate.now()); // Date du jour
+            dec.setDateDeclaration(LocalDate.now());
             dec.setEmployeur(emp);
 
             declarationDAO.creerDeclaration(dec);
